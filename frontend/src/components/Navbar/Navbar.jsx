@@ -6,9 +6,7 @@ import { NavLink } from 'react-router-dom'
 
 
 const navigation = [
-  { name: 'Home', href: '/', current: true },
-  { name: 'Profile', href: '/profile', current: false },
- 
+  { name: 'Home', href: '/', current: true }, 
 ]
 
 function classNames(...classes) {
@@ -17,7 +15,7 @@ function classNames(...classes) {
 
 export default function Navbar() {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-emerald-600">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -55,8 +53,8 @@ export default function Navbar() {
                         className={({ isActive }) =>
                         `${
                           isActive
-                            ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'
-                        } px-3 py-2 rounded-md text-sm font-medium`
+                            ? 'bg-emerald-800 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                        } py-2 px-3 rounded-md text-sm font-medium`
                       }
                         
                         aria-current={item.current ? 'page' : undefined}
@@ -100,12 +98,12 @@ export default function Navbar() {
                     <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
+                          <NavLink
+                            to="/profile"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Your Profile
-                          </a>
+                          </NavLink>
                         )}
                       </Menu.Item>
                       <Menu.Item>
