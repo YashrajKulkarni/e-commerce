@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel } from "flowbite-react";
+
 const CarouselData = [
   {
     Image: "https://m.media-amazon.com/images/I/61YuJJ7PMwL._SX3000_.jpg",
