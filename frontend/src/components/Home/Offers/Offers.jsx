@@ -4,7 +4,7 @@ import OffersData from "./Offers"
 function Offers() {
   return (
     <div>
-      <dinv className="product">
+      <div className="product">
             <div className="product_info">
                 <p>The lean startupp</p>
                 

@@ -1,53 +1,39 @@
-import React,{useState} from 'react'
-import { CarouselData } from './CarouselData';
-import {FaArrowAltCircleRight, FaArrowAltCircleLeft} from 'react-icons/fa'
-import './Carousel.css';
-
-const CarouselSlider=({slides})=> {
-  
-    const [current,setCurrent] = useState(0)
-    const length = slides.length
-    
-    const nextSlide=() =>{
-        setCurrent (current === length-1?0: current+1);
-    };
-
-    const prevSlide = () => {
-        setCurrent(current === 0 ? length -1 : current -1);
-    }
-
-     console.log(current)
-    if (!Array.isArray(slides) || slides.length <= 0){
-        return null;
-    }
-
-    return (
-        <div>
-            <hr></hr>
-        <section><div>
-            <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide}/>
-            <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide}/>
-        </div>
-        <div className='Slider'>
-            
-        {CarouselData.map((slide, index) =>{
-        return(
-            <div className={index === current?'slide active':'slide'}
-            key={index}>
-        
-        {index === current &&(<img src={slide.Image} alt='travel'  />
-        )}
-          
-        </div>
-        )
-         
-        })}
-
-        </div>
-        </section>
-    
-        </div>
-    )
+import React from "react";
+import { Carousel } from "flowbite-react";
+const CarouselData = [
+  {
+    Image: "https://m.media-amazon.com/images/I/61YuJJ7PMwL._SX3000_.jpg",
+  },
+  {
+    Image: "https://m.media-amazon.com/images/I/61MtKclTZIL._SX3000_.jpg",
+  },
+  {
+    Image: "https://m.media-amazon.com/images/I/61yWNrPmB-L._SX3000_.jpg",
+  },
+  {
+    Image: "https://m.media-amazon.com/images/I/61BFazitqUL._SX3000_.jpg",
+  },
+  {
+    Image: "https://m.media-amazon.com/images/I/610Tq8M7P+L._SX3000_.jpg",
+  },
+  {
+    Image: "https://m.media-amazon.com/images/I/61Bo0+AnJoL._SX3000_.jpg",
+  },
+];
+export default function CarouselSlider() {
+  return (
+    <div className="h-36 sm:h-44 md:h-56 lg:h-76 xl:h-96">
+      <Carousel>
+        {CarouselData.map((value, key) => (
+          <div key={key} className="relative h-full w-full">
+            <img
+              src={value.Image}
+              className="absolute left-0 top-0 w-full h-auto"
+              alt=""
+            />
+          </div>
+        ))}
+      </Carousel>
+    </div>
+  );
 }
-
-export default CarouselSlider;
