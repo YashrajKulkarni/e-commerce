@@ -1,10 +1,15 @@
 import React from 'react'
-
+import Navbar from './Navbar/Navbar'
+import Offers from './Offers/Offers'
+import CarouselSlider from './Carousel/CarouselSlider';
+import { CarouselData } from './Carousel/CarouselData';
 
 export default function Home() {
   return (
     <div>
-      Home page
+      <Navbar />
+      <CarouselSlider slides={CarouselData}/>
+      <Offers />
     </div>
   )
   

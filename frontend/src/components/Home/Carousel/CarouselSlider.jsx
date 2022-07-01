@@ -16,13 +16,15 @@ const CarouselSlider=({slides})=> {
         setCurrent(current === 0 ? length -1 : current -1);
     }
 
+     console.log(current)
     if (!Array.isArray(slides) || slides.length <= 0){
         return null;
     }
 
     return (
         <div>
-        <div>
+            <hr></hr>
+        <section><div>
             <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide}/>
             <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide}/>
         </div>
@@ -33,7 +35,7 @@ const CarouselSlider=({slides})=> {
             <div className={index === current?'slide active':'slide'}
             key={index}>
         
-        {index === current &&(<img src={slide.Image} alt='travel image' className=' image' />
+        {index === current &&(<img src={slide.Image} alt='travel'  />
         )}
           
         </div>
@@ -41,7 +43,10 @@ const CarouselSlider=({slides})=> {
          
         })}
 
-        </div></div>
+        </div>
+        </section>
+    
+        </div>
     )
 }
 
