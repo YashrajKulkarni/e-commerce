@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel } from "flowbite-react";
+import { Button } from "bootstrap";
 
 const CarouselData = [
   {
@@ -23,16 +24,16 @@ const CarouselData = [
 ];
 export default function CarouselSlider() {
   return (
-    <div className="h-36 sm:h-44 md:h-56 lg:h-76 xl:h-96">
+    <div className="mx-4 h-36 sm:h-44 md:h-56 lg:h-76 xl:h-96">
       <Carousel>
         {CarouselData.map((value, key) => (
-          <div key={key} className="relative h-full w-full">
+          <div key={key} className="flex h-full items-center justify-center bg-gray-400 dark:bg-gray-700 dark:text-white">
             <img
               src={value.Image}
               className="absolute left-0 top-0 w-full h-auto"
               alt=""
             />
-          </div>
+          </div>  
         ))}
       </Carousel>
     </div>
